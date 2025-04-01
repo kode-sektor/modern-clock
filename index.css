@@ -1,0 +1,120 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Centering the Clock */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-size: contain;
+    background-image: url('./7355466.jpg');
+}
+
+/* Main Clock Container */
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+}
+
+/* Clock Face */
+.clock-face {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 420px;
+    width: 420px;
+    border-radius: 2px;
+    background: #18191a;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3),
+                0 25px 45px rgba(0, 0, 0, 0.3);
+    border: 13px solid rgba(0,0,0,.5);
+    opacity: .8;
+}
+
+/* Clock Numbers */
+.clock-face label {
+    position: absolute;
+    inset: 20px;
+    text-align: center;
+    transform: rotate(calc(var(--i) * (360deg / 12)));
+}
+.clock-face label span {
+    display: inline-block;
+    font-size: 33px;
+    font-weight: bolder;
+    white-space: pre;
+    color: #fff;
+    transform: rotate(calc(var(--i) * (-360deg / 12)));
+}
+
+/* Clock Hands Container */
+.clock-hands {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    height: 12px;
+    width: 12px;
+}
+
+/* Center Dot */
+.clock-hands::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    z-index: 100;
+    background: #fff;
+    border: 4px solid #e74c3c;
+}
+
+/* Clock Hands */
+.hand {
+    position: absolute;
+    bottom: 0;
+    border-radius: 25px;
+    transform-origin: bottom;
+}
+
+/* Second Hand */
+.hand-second {
+    height: 130px;
+    width: 4px;
+    background: #e74c3c;
+}
+
+/* Minute Hand */
+.hand-minute {
+    height: 120px;
+    width: 5px;
+    background: #fff;
+}
+
+/* Hour Hand */
+.hand-hour {
+    height: 100px;
+    width: 8px;
+    background: #fff;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 22px;
+    font-weight: 400;
+    display: inline-block;
+    color: #18191a;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
